@@ -12,6 +12,7 @@ import { Box, BoxFull, SafeAreaFull } from "../../components/Spacing";
 import { Divider } from "react-native-paper";
 import { H1, TextRegular } from "../../components/Title";
 import { houses } from "./houses";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 // import { Container } from './styles';
 
@@ -108,6 +109,9 @@ const Home = () => (
               bg="orange"
               mt="20"
               borderRadius={10}
+              style={{
+                zIndex: 1,
+              }}
             >
               <Image
                 style={{
@@ -118,6 +122,63 @@ const Home = () => (
                 resizeMode="cover"
                 source={house.img}
               />
+
+              <Box
+                bg="#000"
+                style={{
+                  position: "absolute",
+                  top: 10,
+                  opacity: 0.7,
+                  marginLeft: "2%",
+                  paddingHorizontal: 5,
+                }}
+              >
+                <TextRegular
+                  style={{
+                    color: "#fff",
+                    zIndex: 5,
+                    fontSize: 12,
+                  }}
+                >
+                  {house.title}
+                </TextRegular>
+              </Box>
+
+              <Box
+                style={{
+                  position: "absolute",
+                  right: 5,
+                  bottom: 5,
+                  flexDirection: "row",
+                  width: 45,
+                  justifyContent: "space-between",
+                  backgroundColor: "#fff",
+                  opacity: 0.7,
+                }}
+              >
+                <TextRegular style={{ color: "#000", fontSize: 12 }}>
+                  {house.likes}
+                </TextRegular>
+                <FontAwesome5 name="heart" size={18} color="#F05454" />
+              </Box>
+
+              <Box
+                style={{
+                  position: "absolute",
+                  left: 5,
+                  bottom: 5,
+                  flexDirection: "row",
+                  width: 45,
+                  justifyContent: "space-between",
+                  backgroundColor: "#fff",
+                  opacity: 0.7,
+                }}
+              >
+                <TextRegular style={{ color: "#000", fontSize: 12 }}>
+                  {house.views}
+                </TextRegular>
+                <FontAwesome5 name="eye" size={18} color="black" />
+              </Box>
             </Box>
           ))}
         </Box>
