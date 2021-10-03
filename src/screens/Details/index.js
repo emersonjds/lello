@@ -25,16 +25,7 @@ const Details = ({ route, navigation }) => {
         <TextRegular color="#30475E">Alugue com Lello My Home</TextRegular>
       </Box>
 
-      {/* Fotos */}
       <Box>
-        {/* <ScrollView
-          style={{
-            paddingTop: 10,
-
-            showVerticalScrollIndicator: false,
-            showsHorizontalScrollIndicator: false,
-          }}
-        > */}
         <Box
           key={house.id}
           height="150"
@@ -55,7 +46,6 @@ const Details = ({ route, navigation }) => {
             source={house.img}
           />
         </Box>
-        {/* </ScrollView> */}
       </Box>
 
       <Box mt="20">
