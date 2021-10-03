@@ -11,6 +11,15 @@ ${border}
 position: relative;
 `;
 
+export const BoxTouchable = styled.TouchableOpacity`
+  ${space}
+  ${color}
+${layout}
+${flex}
+${border}
+position: relative;
+`;
+
 export const BoxFull = styled.View`
   flex: 1;
   width: ${Dimensions.get("window").width}px;

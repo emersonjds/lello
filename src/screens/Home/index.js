@@ -8,7 +8,12 @@ import {
   Image,
 } from "react-native";
 
-import { Box, BoxFull, SafeAreaFull } from "../../components/Spacing";
+import {
+  Box,
+  BoxFull,
+  BoxTouchable,
+  SafeAreaFull,
+} from "../../components/Spacing";
 import { Divider } from "react-native-paper";
 import { H1, TextRegular } from "../../components/Title";
 import { houses } from "./houses";
@@ -82,7 +87,7 @@ const Home = () => (
       >
         <Box flexDirection="row" flexWrap="wrap" justifyContent="space-between">
           {houses.map((house) => (
-            <Box
+            <BoxTouchable
               key={house.id}
               height="120"
               width={
@@ -90,7 +95,6 @@ const Home = () => (
                   ? "100%"
                   : "46%"
               }
-              bg="orange"
               mt="20"
               borderRadius={10}
               style={{
@@ -163,7 +167,7 @@ const Home = () => (
                 </TextRegular>
                 <FontAwesome5 name="eye" size={18} color="black" />
               </Box>
-            </Box>
+            </BoxTouchable>
           ))}
         </Box>
       </ScrollView>
