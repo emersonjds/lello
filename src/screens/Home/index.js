@@ -13,6 +13,7 @@ import { Divider } from "react-native-paper";
 import { H1, TextRegular } from "../../components/Title";
 import { houses } from "./houses";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { initialHouses } from "./initialHouses";
 
 const Home = () => (
   <SafeAreaView
@@ -29,41 +30,26 @@ const Home = () => (
 
     <Box>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <Box height="150" width="250" mr="10" border={0.5} borderRadius={10}>
-          <Image
-            style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: 10,
-            }}
-            resizeMode="cover"
-            source={require("../../img/lf-1.jpeg")}
-          />
-        </Box>
-
-        <Box height="150" width="250" mr="10" border={0.5} borderRadius={10}>
-          <Image
-            style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: 10,
-            }}
-            resizeMode="cover"
-            source={require("../../img/lf-2.jpeg")}
-          />
-        </Box>
-
-        <Box height="150" width="250" mr="10" border={0.5} borderRadius={10}>
-          <Image
-            style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: 10,
-            }}
-            resizeMode="cover"
-            source={require("../../img/lf-3.jpeg")}
-          />
-        </Box>
+        {initialHouses.map((house) => (
+          <Box
+            key={house.id}
+            height="150"
+            width="250"
+            mr="10"
+            border={0.5}
+            borderRadius={10}
+          >
+            <Image
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: 10,
+              }}
+              resizeMode="cover"
+              source={house.img}
+            />
+          </Box>
+        ))}
       </ScrollView>
     </Box>
 
