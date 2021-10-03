@@ -17,4 +17,6 @@ export const BoxFull = styled.View`
 
 export const SafeAreaFull = styled(SafeAreaView)`
   flex: 1;
+  width: ${Dimensions.get("window").width}px;
+  height: ${Dimensions.get("window").height}px;
 `;
