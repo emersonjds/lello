@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { space, color, layout, flex } from "styled-system";
+import { space, color, layout, flex, border } from "styled-system";
 import { Dimensions, SafeAreaView } from "react-native";
 
 export const Box = styled.View`
@@ -7,6 +7,7 @@ export const Box = styled.View`
   ${color}
 ${layout}
 ${flex}
+${border}
 `;
 
 export const BoxFull = styled.View`
