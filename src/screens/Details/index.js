@@ -3,8 +3,6 @@ import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { Box } from "../../components/Spacing";
 import { TextRegular } from "../../components/Title";
 
-// import { Container } from './styles';
-
 const Details = ({ house }) => {
   return (
     <Box pt={20} pr={20} pl={20}>
