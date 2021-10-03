@@ -8,6 +8,7 @@ export const Box = styled.View`
 ${layout}
 ${flex}
 ${border}
+position: relative;
 `;
 
 export const BoxFull = styled.View`
