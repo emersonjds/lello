@@ -11,8 +11,16 @@ const Details = ({ house }) => {
         <TextRegular color="#30475E">Financiamento facilitado</TextRegular>
       </Box>
 
+      {/* Fotos */}
       <Box>
-        <ScrollView></ScrollView>
+        <ScrollView
+          style={{
+            paddingTop: 10,
+            paddingHorizontal: 20,
+            showVerticalScrollIndicator: false,
+            showsHorizontalScrollIndicator: false,
+          }}
+        ></ScrollView>
       </Box>
 
       <Box>
