@@ -14,8 +14,6 @@ import { H1, TextRegular } from "../../components/Title";
 import { houses } from "./houses";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-// import { Container } from './styles';
-
 const Home = () => (
   <SafeAreaView
     style={{
