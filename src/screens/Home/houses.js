@@ -4,9 +4,25 @@ export const houses = [
     title: "Vila Mada",
     description: "Imovel bem localizado proximo a metros",
     img: require("../../img/loft-1.jpeg"),
+    otherImages: [
+      {
+        id: 1,
+        url: require("../../img/loft-1.jpeg"),
+      },
+      {
+        id: 2,
+        url: require("../../img/loft-1.jpeg"),
+      },
+      {
+        id: 3,
+        url: require("../../img/loft-1.jpeg"),
+      },
+    ],
+
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 2,
@@ -16,6 +32,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 3,
@@ -25,6 +42,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 4,
@@ -34,6 +52,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 5,
@@ -43,6 +62,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 6,
@@ -52,6 +72,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 7,
@@ -67,6 +88,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 9,
@@ -76,6 +98,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 10,
@@ -85,6 +108,7 @@ export const houses = [
     bairro: "Vila Mariana",
     likes: 100,
     views: 233,
+    description: "Imovel bem localizado proximo ao metro",
   },
   {
     id: 11,

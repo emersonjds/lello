@@ -10,7 +10,7 @@ import Details from "./src/screens/Details";
 const Stack = createNativeStackNavigator();
 
 const Stacks = (
-  <Stack.Navigator initialRouteName={"Details"}>
+  <Stack.Navigator initialRouteName={"Home"}>
     <Stack.Screen
       name="Home"
       component={Home}
