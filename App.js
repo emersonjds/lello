@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/screens/Home";
 import Details from "./src/screens/Details";
 import LelloDetails from "./src/screens/LelloDetails";
+import UserForm from "./src/screens/UserForm";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const Stacks = (
     />
     <Stack.Screen name="Details" component={Details} />
     <Stack.Screen name="LelloDetails" component={LelloDetails} />
+    <Stack.Screen name="UserForm" component={UserForm} />
   </Stack.Navigator>
 );
 

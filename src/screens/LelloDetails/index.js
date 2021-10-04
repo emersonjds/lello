@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/core";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
 
@@ -9,6 +10,8 @@ import { Colors } from "../../contants";
 // import { Container } from './styles';
 
 const LelloDetails = () => {
+  const navigation = useNavigation();
+
   return (
     <Box p={20}>
       <Box>
@@ -49,6 +52,9 @@ const LelloDetails = () => {
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 10,
+          }}
+          onPress={() => {
+            navigation.navigate("UserForm");
           }}
         >
           <TextRegular color={Colors.quaternary}>
