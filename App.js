@@ -16,18 +16,32 @@ import UserForm from "./src/screens/UserForm";
 const Stack = createNativeStackNavigator();
 
 const Stacks = (
-  <Stack.Navigator
-    initialRouteName={"SplashScreen"}
-  >
-    <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-    <Stack.Screen name="Details" component={Details} options={{ headerShown: false }} />
-    <Stack.Screen name="EnvioDocumentos" component={EnvioDocumentos} options={{ headerShown: false }} />
-    <Stack.Screen name="MapViewer" component={MapViewer} options={{ headerShown: false }} />
-    <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
+  <Stack.Navigator initialRouteName={"SplashScreen"}>
+    <Stack.Screen
+      name="Home"
+      component={Home}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen name="Details" component={Details} />
+    <Stack.Screen
+      name="EnvioDocumentos"
+      component={EnvioDocumentos}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="MapViewer"
+      component={MapViewer}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="SplashScreen"
+      component={SplashScreen}
+      options={{ headerShown: false }}
+    />
     <Stack.Screen name="LelloDetails" component={LelloDetails} />
     <Stack.Screen name="UserForm" component={UserForm} />
-  </Stack.Navigator >
-)
+  </Stack.Navigator>
+);
 
 export default function App() {
   return <NavigationContainer>{Stacks}</NavigationContainer>;
