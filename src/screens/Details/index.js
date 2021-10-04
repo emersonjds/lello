@@ -12,15 +12,12 @@ import { TextRegular, TextSubtitle } from "../../components/Title";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 const Details = () => {
-  
-  const route = useRoute()
-  const navigation = useNavigation()
-  
+  const route = useRoute();
+  const navigation = useNavigation();
+
   const { description } = route?.params;
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <Box pt={20} pr={20} pl={20}>
@@ -59,7 +56,14 @@ const Details = () => {
 
       {/* Mapa */}
       <Box width="100%" mt="10" borderRadius={10} borderColor="#222831">
-        <TextRegular color="#F05454">Items do Imovel</TextRegular>
+        <TextRegular
+          color="#F05454"
+          onPress={() => {
+            navigation.navigate("HomeUser");
+          }}
+        >
+          Items do Imovel
+        </TextRegular>
         <TextSubtitle color="#222831">2 banheiros</TextSubtitle>
         <TextSubtitle color="#222831">Varanda gourmet</TextSubtitle>
         <TextSubtitle color="#222831">Cozinha planejada</TextSubtitle>
@@ -91,7 +95,7 @@ const Details = () => {
             justifyContent: "center",
             marginTop: 20,
           }}
-          onPress={() => navigation.navigate('EnvioDocumentos')}
+          onPress={() => navigation.navigate("EnvioDocumentos")}
         >
           <TextRegular color="#fff">Alugue de forma convencional</TextRegular>
         </TouchableOpacity>
@@ -110,7 +114,6 @@ const Details = () => {
             navigation.navigate("LelloDetails");
           }}
         >
-          
           <TextRegular color="#fff">Alugue com Lello My Home</TextRegular>
         </TouchableOpacity>
       </Box>
