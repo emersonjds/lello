@@ -11,14 +11,20 @@ import Home from "./src/screens/Home";
 import Details from "./src/screens/Details";
 import LelloDetails from "./src/screens/LelloDetails";
 import UserForm from "./src/screens/UserForm";
+import HomeUser from "./src/screens/HomeUser";
+import Invest from "./src/screens/Invest";
+import LelloHouses from "./src/screens/LelloHouses";
 
 const Stack = createNativeStackNavigator();
 
 const Stacks = (
-  <Stack.Navigator initialRouteName={"Home"}>
+  <Stack.Navigator initialRouteName={"LelloHouses"}>
     <Stack.Screen name="Details" component={Details} />
     <Stack.Screen name="LelloDetails" component={LelloDetails} />
     <Stack.Screen name="UserForm" component={UserForm} />
+    <Stack.Screen name="HomeUser" component={HomeUser} />
+    <Stack.Screen name="Invest" component={Invest} />
+    <Stack.Screen name="LelloHouses" component={LelloHouses} />
     <Stack.Screen
       name="Home"
       component={Home}
