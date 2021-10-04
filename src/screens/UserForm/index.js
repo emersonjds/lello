@@ -5,12 +5,14 @@ import { TextInput } from "react-native-paper";
 import { Colors } from "../../contants";
 import { TextLow, TextRegular } from "../../components/Title";
 import { RadioButton } from "react-native-paper";
+import { useNavigation } from "@react-navigation/core";
 
 // import { Container } from './styles';
 
 const UserForm = () => {
   const [text, setText] = React.useState("");
   const [checked, setChecked] = React.useState("first");
+  const navigation = useNavigation();
 
   return (
     <Box p={20} color={Colors.quaternary} style={{ flex: 1 }}>
@@ -91,9 +93,22 @@ const UserForm = () => {
           </Box>
         </Box>
 
-        <Box>
-          <TouchableOpacity>
-            <Text>Buscar Imoveis com meu perfil</Text>
+        <Box mt={30}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: Colors.primary,
+              alignItems: "center",
+              justifyContent: "center",
+              height: 52,
+              borderRadius: 10,
+            }}
+            onPress={() => {
+              navigation.navigate("MapViewer");
+            }}
+          >
+            <TextRegular color={Colors.quaternary}>
+              Buscar Imoveis com meu perfil
+            </TextRegular>
           </TouchableOpacity>
         </Box>
       </Box>
