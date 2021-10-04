@@ -9,19 +9,23 @@ import {
 } from "react-native";
 import { Box } from "../../components/Spacing";
 import { TextRegular, TextSubtitle } from "../../components/Title";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-const Details = ({ route, navigation }) => {
-  const { house } = route?.params;
+const Details = () => {
+  
+  const route = useRoute()
+  const navigation = useNavigation()
+  
+  const { description } = route?.params;
 
   useEffect(() => {
-    console.log(house);
+    
   }, []);
 
   return (
     <Box pt={20} pr={20} pl={20}>
       <Box>
-        <TextRegular color="#F05454">{house.bairro}</TextRegular>
+        <TextRegular color="#F05454">Vila Mariana</TextRegular>
         <TextRegular color="#30475E">Alugue com Lello My Home</TextRegular>
       </Box>
 
@@ -36,7 +40,7 @@ const Details = ({ route, navigation }) => {
           }}
         > */}
         <Box
-          key={house.id}
+          key={Math.random()}
           height="150"
           width="100%"
           mr="10"
@@ -52,7 +56,7 @@ const Details = ({ route, navigation }) => {
               borderRadius: 10,
             }}
             resizeMode="cover"
-            source={house.img}
+            source={require("../../img/loft-1.jpeg")}
           />
         </Box>
         {/* </ScrollView> */}
@@ -60,7 +64,7 @@ const Details = ({ route, navigation }) => {
 
       <Box mt="20">
         <TextRegular color="#F05454">Sobre</TextRegular>
-        <Text>{house.description}</Text>
+        <Text>{description}</Text>
       </Box>
 
       {/* Mapa */}
@@ -97,6 +101,7 @@ const Details = ({ route, navigation }) => {
             justifyContent: "center",
             marginTop: 20,
           }}
+          onPress={() => navigation.navigate('EnvioDocumentos')}
         >
           <TextRegular color="#fff">Alugue de forma convencional</TextRegular>
         </TouchableOpacity>
@@ -111,7 +116,9 @@ const Details = ({ route, navigation }) => {
             justifyContent: "center",
             marginTop: 20,
           }}
+          onPress={() => navigation.navigate('MapViewer')}
         >
+          
           <TextRegular color="#fff">Alugue com Lello My Home</TextRegular>
         </TouchableOpacity>
       </Box>

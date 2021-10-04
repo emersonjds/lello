@@ -9,17 +9,19 @@ import EnvioDocumentos from './src/screens/EnvioDocumentos';
 import MapViewer from './src/screens/MapViewer';
 import Home from "./src/screens/Home";
 import Details from "./src/screens/Details";
+import SplashScreen from "./src/screens/SplashScreen";
 
 const Stack = createNativeStackNavigator();
 
 const Stacks = (
   <Stack.Navigator
-    initialRouteName={"Home"}
+    initialRouteName={"SplashScreen"}
   >
     <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
     <Stack.Screen name="Details" component={Details} options={{ headerShown: false }} />
     <Stack.Screen name="EnvioDocumentos" component={EnvioDocumentos} options={{ headerShown: false }} />
     <Stack.Screen name="MapViewer" component={MapViewer} options={{ headerShown: false }} />
+    <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
   </Stack.Navigator >
 )
 
