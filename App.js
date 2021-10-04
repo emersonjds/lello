@@ -18,7 +18,7 @@ import LelloHouses from "./src/screens/LelloHouses";
 const Stack = createNativeStackNavigator();
 
 const Stacks = (
-  <Stack.Navigator initialRouteName={"LelloHouses"}>
+  <Stack.Navigator initialRouteName={"Home"}>
     <Stack.Screen name="Details" component={Details} />
     <Stack.Screen name="LelloDetails" component={LelloDetails} />
     <Stack.Screen name="UserForm" component={UserForm} />
