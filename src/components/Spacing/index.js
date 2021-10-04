@@ -8,6 +8,16 @@ export const Box = styled.View`
   ${layout}
   ${flex}
   ${border}
+position: relative;
+`;
+
+export const BoxTouchable = styled.TouchableOpacity`
+  ${space}
+  ${color}
+  ${layout}
+  ${flex}
+  ${border}
+position: relative;
 `;
 
 export const BoxFull = styled.View`
