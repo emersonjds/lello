@@ -4,15 +4,20 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import Login from './src/screens/Login';
+import EnvioDocumentos from './src/screens/EnvioDocumentos';
+import MapViewer from './src/screens/MapViewer';
 
 const Stack = createNativeStackNavigator();
 
 const Stacks = (
   <Stack.Navigator
-    initialRouteName={"Login"}>
-    <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}
-    />
+    initialRouteName={"MapViewer"}
+  >
+    <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+    <Stack.Screen name="EnvioDocumentos" component={EnvioDocumentos} options={{ headerShown: false }} />
+    <Stack.Screen name="MapViewer" component={MapViewer} options={{ headerShown: false }} />
   </Stack.Navigator >
 )
 

@@ -5,9 +5,9 @@ import { Dimensions, SafeAreaView } from "react-native";
 export const Box = styled.View`
   ${space}
   ${color}
-${layout}
-${flex}
-${border}
+  ${layout}
+  ${flex}
+  ${border}
 `;
 
 export const BoxFull = styled.View`
