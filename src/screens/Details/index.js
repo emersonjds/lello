@@ -29,16 +29,7 @@ const Details = () => {
         <TextRegular color="#30475E">Alugue com Lello My Home</TextRegular>
       </Box>
 
-      {/* Fotos */}
       <Box>
-        {/* <ScrollView
-          style={{
-            paddingTop: 10,
-
-            showVerticalScrollIndicator: false,
-            showsHorizontalScrollIndicator: false,
-          }}
-        > */}
         <Box
           key={Math.random()}
           height="150"
@@ -59,7 +50,6 @@ const Details = () => {
             source={require("../../img/loft-1.jpeg")}
           />
         </Box>
-        {/* </ScrollView> */}
       </Box>
 
       <Box mt="20">
@@ -116,7 +106,9 @@ const Details = () => {
             justifyContent: "center",
             marginTop: 20,
           }}
-          onPress={() => navigation.navigate('MapViewer')}
+          onPress={() => {
+            navigation.navigate("LelloDetails");
+          }}
         >
           
           <TextRegular color="#fff">Alugue com Lello My Home</TextRegular>

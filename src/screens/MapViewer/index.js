@@ -1,24 +1,24 @@
-import React, {useRef, useState, useEffect} from "react";
-import { 
-    View, 
-    Text, 
-    SafeAreaView, 
-    ScrollView,
-    Image,
-    StyleSheet,
-    TouchableOpacity,
-    Modal,
-    Dimensions,
-    FlatList
+import React, { useRef, useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Modal,
+  Dimensions,
+  FlatList,
 } from "react-native";
 
 import { Box, BoxFull, SafeAreaFull } from "../../components/Spacing";
 import { Divider } from "react-native-paper";
 import { H1, TextRegular } from "../../components/Title";
 
-import * as Animatable from 'react-native-animatable'
-import MapView from 'react-native-maps';
-import {customMapStyleRetro} from './customMapStyle'
+import * as Animatable from "react-native-animatable";
+import MapView from "react-native-maps";
+import { customMapStyleRetro } from "./customMapStyle";
 
 import HouseMarkerImage from '../../../assets/house-marker-v2.png'
 import { Rating } from 'react-native-ratings'
@@ -102,128 +102,120 @@ const MapViewer = () => {
         }
     ]
 
-    useEffect(() => {
-        
-    })
+  const handleMarkerItem = (houseItem) => {
+    console.log("handleMarkerItem INVOKED", houseItem);
+    navigation.navigate('Details', {
+        title: 'lello house 5',
+        latitude: -23.585511504521076, 
+        longitude: -46.647656068902116,
+        description: 'Apto Cond. com 2 quartos, 1 banheiro, 1 cozinha',
+        bairro: 'Vila Mariana - SP',
+        rate: 4
+    },)
+  };
 
-    const handleMarkerItem = (houseItem) => {
-        console.log('handleMarkerItem INVOKED', houseItem)
-        navigation.navigate('Details', {
-            title: 'lello house 9',
-            latitude: -23.574718838627042,
-            longitude:  -46.64693509321604,
-            description: 'Casa com 2 quartos, 1 banheiro (Prox. Parque, Padaria)',
-            bairro: 'Vila Mariana - SP',
-            rate: 5
-        })
-    }
-
-    return (
-        <SafeAreaView
-            style={{
-                flex: 1,
-                backgroundColor: "#fff",
-            }}
-        >
-            
-            <MapView 
-                style={styles.map}
-                showsUserLocation={true}
-                loadingEnabled={true}
-                customMapStyle={customMapStyleRetro}
-                region={{
-                    latitude: -23.586117189055603, 
-                    longitude: -46.64411127137988,
-                    latitudeDelta: 0.025,
-                    longitudeDelta: 0.025
-                }}
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: "#fff",
+      }}
+    >
+      <MapView
+        style={styles.map}
+        showsUserLocation={true}
+        loadingEnabled={true}
+        // customMapStyle={customMapStyleRetro}
+        region={{
+          latitude: -23.586117189055603,
+          longitude: -46.64411127137988,
+          latitudeDelta: 0.025,
+          longitudeDelta: 0.025,
+        }}
+      >
+        {housePositions.map((house) => {
+          return (
+            <MapView.Marker
+              coordinate={{
+                latitude: house.latitude,
+                longitude: house.longitude,
+              }}
+              title={house.title}
+              // description={'Condominio Lelo 1'}
+              onPress={() => handleMarkerItem(house)}
             >
-                {housePositions.map(house => {
-                    return <MapView.Marker 
-                        coordinate={{
-                            latitude: house.latitude,
-                            longitude: house.longitude,
-                        }}
-                        title={house.title}
-                        // description={'Condominio Lelo 1'}
-                        onPress={() => handleMarkerItem(house)}
-                        
-                    >
-                        <Animatable.Image 
-                            source={HouseMarkerImage} 
-                            style={{width: 40, height: 40}}
-                            resizeMode={'contain'}
-                            animation={'bounce'}
-                        />
-                    </MapView.Marker>
-                })}
-                
-            </MapView>
+              <Animatable.Image
+                source={HouseMarkerImage}
+                style={{ width: 40, height: 40 }}
+                resizeMode={"contain"}
+                animation={"bounce"}
+              />
+            </MapView.Marker>
+          );
+        })}
+      </MapView>
 
-            <Animatable.View 
+      <Animatable.View
+        style={{
+          position: "absolute",
+          backgroundColor: "white",
+          borderWidth: 0.2,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
+          height: 300,
+          width: "95%",
+          alignSelf: "center",
+          bottom: 0,
+          padding: 10,
+        }}
+        animation={"bounceInUp"}
+        duration={1000}
+      >
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {housePositions.map((house) => {
+            return (
+              <TouchableOpacity
                 style={{
-                    position: 'absolute',
-                    backgroundColor: 'white',
-                    borderWidth: 0.2,
-                    borderTopLeftRadius: 10,
-                    borderTopRightRadius: 10,
-                    height: 300,
-                    width: '95%',
-                    alignSelf: 'center',
-                    bottom: 0,
-                    padding: 10
+                  paddingVertical: 20,
+                  marginHorizontal: 10,
+                  borderBottomWidth: 0.2,
                 }}
-                animation={'bounceInUp'}
-                duration={1000}
-            >
-                <ScrollView
-                    showsVerticalScrollIndicator={false}
-                >
-
-                {housePositions.map(house => {
-                    return <TouchableOpacity 
-                        style={{
-                            paddingVertical: 20,
-                            marginHorizontal: 10,
-                            borderBottomWidth: 0.2,
-                        }}
-                        onPress={() => handleMarkerItem(house)}
-                    >
-                        <View
-                            style={{
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between'
-                            }}
-                        >
-                            <Text>{house.title}</Text>
-                            <Rating
-                                ratingCount={house.rate}
-                                imageSize={12}
-                                showRating
-                                ratingColor='gray'
-                                ratingBackgroundColor='#c8c7c8'
-                                ratingTextColor={'gray'}
-                            />
-                        </View>
-                    <Text style={{fontSize: 12, paddingTop: 5, color: 'gray'}}>{house.description}</Text>
-                    </TouchableOpacity>
-                })}
-                </ScrollView>
-                    
-             </Animatable.View>    
-            
-
-        </SafeAreaView>
-
-    )
-
-}
+                onPress={() => handleMarkerItem(house)}
+              >
+                  <View
+                    style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between'
+                    }}
+                  >
+                <Text>
+                  {house.title}
+                </Text>
+                <Rating
+                    ratingCount={house.rate}
+                    imageSize={12}
+                    showRating
+                    ratingColor='gray'
+                    ratingBackgroundColor='#c8c7c8'
+                    ratingTextColor={'gray'}
+                />
+                </View>
+                <Text style={{fontSize: 12}}>
+                  {house.description}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </Animatable.View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
-    map: {
-        flex: 1,
-    }
-})
+  map: {
+    flex: 1,
+  },
+});
 
-export default MapViewer
+export default MapViewer;

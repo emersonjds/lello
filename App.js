@@ -5,11 +5,13 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import EnvioDocumentos from './src/screens/EnvioDocumentos';
-import MapViewer from './src/screens/MapViewer';
+import EnvioDocumentos from "./src/screens/EnvioDocumentos";
+import MapViewer from "./src/screens/MapViewer";
 import Home from "./src/screens/Home";
 import Details from "./src/screens/Details";
 import SplashScreen from "./src/screens/SplashScreen";
+import LelloDetails from "./src/screens/LelloDetails";
+import UserForm from "./src/screens/UserForm";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +24,8 @@ const Stacks = (
     <Stack.Screen name="EnvioDocumentos" component={EnvioDocumentos} options={{ headerShown: false }} />
     <Stack.Screen name="MapViewer" component={MapViewer} options={{ headerShown: false }} />
     <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
+    <Stack.Screen name="LelloDetails" component={LelloDetails} />
+    <Stack.Screen name="UserForm" component={UserForm} />
   </Stack.Navigator >
 )
 
