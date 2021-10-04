@@ -83,6 +83,9 @@ const Details = ({ route, navigation }) => {
             justifyContent: "center",
             marginTop: 20,
           }}
+          onPress={() => {
+            navigation.navigate("EnvioDocumentos");
+          }}
         >
           <TextRegular color="#fff">Alugue de forma convencional</TextRegular>
         </TouchableOpacity>
