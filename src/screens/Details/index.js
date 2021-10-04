@@ -14,10 +14,6 @@ import { useNavigation } from "@react-navigation/native";
 const Details = ({ route, navigation }) => {
   const { house } = route?.params;
 
-  useEffect(() => {
-    console.log(house);
-  }, []);
-
   return (
     <Box pt={20} pr={20} pl={20}>
       <Box>
@@ -100,6 +96,9 @@ const Details = ({ route, navigation }) => {
             alignItems: "center",
             justifyContent: "center",
             marginTop: 20,
+          }}
+          onPress={() => {
+            navigation.navigate("LelloDetails");
           }}
         >
           <TextRegular color="#fff">Alugue com Lello My Home</TextRegular>
