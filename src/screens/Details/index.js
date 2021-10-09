@@ -14,10 +14,6 @@ import { useNavigation } from "@react-navigation/native";
 const Details = ({ route, navigation }) => {
   const { house } = route?.params;
 
-  useEffect(() => {
-    console.log(house);
-  }, []);
-
   return (
     <Box pt={20} pr={20} pl={20}>
       <Box>
@@ -25,16 +21,7 @@ const Details = ({ route, navigation }) => {
         <TextRegular color="#30475E">Alugue com Lello My Home</TextRegular>
       </Box>
 
-      {/* Fotos */}
       <Box>
-        {/* <ScrollView
-          style={{
-            paddingTop: 10,
-
-            showVerticalScrollIndicator: false,
-            showsHorizontalScrollIndicator: false,
-          }}
-        > */}
         <Box
           key={house.id}
           height="150"
@@ -55,7 +42,6 @@ const Details = ({ route, navigation }) => {
             source={house.img}
           />
         </Box>
-        {/* </ScrollView> */}
       </Box>
 
       <Box mt="20">
@@ -97,6 +83,9 @@ const Details = ({ route, navigation }) => {
             justifyContent: "center",
             marginTop: 20,
           }}
+          onPress={() => {
+            navigation.navigate("EnvioDocumentos");
+          }}
         >
           <TextRegular color="#fff">Alugue de forma convencional</TextRegular>
         </TouchableOpacity>
@@ -110,6 +99,9 @@ const Details = ({ route, navigation }) => {
             alignItems: "center",
             justifyContent: "center",
             marginTop: 20,
+          }}
+          onPress={() => {
+            navigation.navigate("LelloDetails");
           }}
         >
           <TextRegular color="#fff">Alugue com Lello My Home</TextRegular>
